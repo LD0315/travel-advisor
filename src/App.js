@@ -9,8 +9,15 @@ import Map from './components/Map/Map';
 
 const App = () => {
     const [places, setPlaces] = useState([]);
-    const [coordinates, setCoordinates] = useState({ lat: 0, lng: 0 });
+    const [coordinates, setCoordinates] = useState({ lat: -27.469824, lng: 153.025216 });
     const [bounds, setBounds] =  useState(null);
+
+    // check system preference access location 
+    useEffect(() => {
+        navigator.geolocation.getCurrentPosition(({ coords: {latitude, longitude}}) => {
+            setCoordinates({ lat: latitude, lng: longitude });
+        })
+    }, []);
 
     useEffect(() => {
         console.log(coordinates, bounds);
