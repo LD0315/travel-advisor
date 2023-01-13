@@ -9,7 +9,7 @@ import Map from './components/Map/Map';
 
 const App = () => {
     const [places, setPlaces] = useState([]);
-    const [coordinates, setCoordinates] = useState({});
+    const [coords, setCoordinates] = useState({});
     const [bounds, setBounds] =  useState(null);
 
     useEffect(() => {
@@ -33,7 +33,7 @@ const App = () => {
                     <Map 
                         setCoordinates={setCoordinates}
                         setBounds={setBounds}
-                        coordinates={coordinates}
+                        coords={coords}
                     />
                 </Grid>
             </Grid>
