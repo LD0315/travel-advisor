@@ -10,7 +10,7 @@ import Map from './components/Map/Map';
 const App = () => {
     const [places, setPlaces] = useState([]);
     const [coordinates, setCoordinates] = useState({});
-    const [bounds, setBounds] =  useState(null);
+    const [bounds, setBounds] =  useState({});
 
     // check system preference access location 
     useEffect(() => {
@@ -23,7 +23,7 @@ const App = () => {
         //console.log(coordinates, bounds);
         getPlacesData(bounds.sw, bounds.ne)
             .then((data) => {
-                //console.log(data);
+                console.log(data);
                 setPlaces(data);
             })
     }, [coordinates, bounds]);
