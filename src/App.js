@@ -9,7 +9,7 @@ import Map from './components/Map/Map';
 
 const App = () => {
     const [places, setPlaces] = useState([]);
-    const [coordinates, setCoordinates] = useState({ lat: -27.469824, lng: 153.025216 });
+    const [coordinates, setCoordinates] = useState({});
     const [bounds, setBounds] =  useState(null);
 
     // check system preference access location 
@@ -20,9 +20,8 @@ const App = () => {
     }, []);
 
     useEffect(() => {
-        console.log(coordinates, bounds);
-
-        getPlacesData()
+        //console.log(coordinates, bounds);
+        getPlacesData(bounds.sw, bounds.ne)
             .then((data) => {
                 //console.log(data);
                 setPlaces(data);
