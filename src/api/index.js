@@ -40,14 +40,14 @@ export const getPlacesData = async (type, sw, ne) => {
 
 export const getWeatherData = async (lat, lng) => {
   try {
-    const { data } = await axios.get('https://openweather43.p.rapidapi.com/weather', {
+    const { data } = await axios.get('https://weatherbit-v1-mashape.p.rapidapi.com/current', {
     params: { lon: lng, lat: lat },
     headers: {
       'X-RapidAPI-Key': process.env.REACT_APP_RAPID_API_KEY,
-      'X-RapidAPI-Host': 'openweather43.p.rapidapi.com'
+      'X-RapidAPI-Host': 'weatherbit-v1-mashape.p.rapidapi.com'
     }
   });
-
+  console.log("weather data:", data);
   return data;
   } catch (error) {
     console.log(error)
