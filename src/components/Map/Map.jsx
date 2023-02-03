@@ -9,7 +9,6 @@ import mapStyles from './mapStyles'
 const Map = ({ setCoordinates, setBounds, coordinates, places, setChildClicked, weatherData }) => {
     const classes = useStyles();
     const isDesktop = useMediaQuery('(min-width:600px)');
-
     //const coords = { lat: 0, lng: 0 };
 
     return (
@@ -54,9 +53,9 @@ const Map = ({ setCoordinates, setBounds, coordinates, places, setChildClicked, 
                         }
                     </div>
                 ))}
-                {weatherData?.list?.map((data, i) => (
+                {weatherData?.length && weatherData.data.map((data, i) => (
                     <div key={i} lat={data.coord.lat} lng={data.coord.lon}>
-                        <img src={`http://openweathermap.org/img/w/${data.weather[0].icon}.png`} height={100} />
+                        <img src={`https://openweathermap.org/img/wn/${data.weather.icon}@2x.png`} height={100} />
                     </div>
                 ))}
             </GoogleMapReact>
