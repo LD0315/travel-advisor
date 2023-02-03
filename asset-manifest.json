@@ -1,0 +1,10 @@
+{
+  "files": {
+    "main.js": "/tripMate/static/js/main.cc9bbd5f.js",
+    "index.html": "/tripMate/index.html",
+    "main.cc9bbd5f.js.map": "/tripMate/static/js/main.cc9bbd5f.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.cc9bbd5f.js"
+  ]
+}
